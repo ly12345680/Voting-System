@@ -1,6 +1,7 @@
 readme_content = """
 # Voting System
-
+![Demo Image](./demo/Picture1.png.png)
+*Figure 1: Login page *
 ## 📌 Overview
 The **Voting System** is an online platform designed to facilitate secure and reliable digital voting. This project provides a structured database and a user-friendly interface to manage voter registrations, candidate details, and voting processes. 
 
