@@ -1,4 +1,72 @@
-readme_content = """# Voting System\n\n## \ud83d\udccc Overview\nThe **Voting System** is an online platform designed to facilitate secure and reliable digital voting. This project provides a structured database and a user-friendly interface to manage voter registrations, candidate details, and voting processes. \n\n## \ud83c\udfaf Key Features\n- **Secure Login System**: Ensures only registered voters can participate.\n- **Admin Dashboard**: Manage voters, candidates, and view election results.\n- **One-Vote Policy**: Prevents multiple votes from a single account.\n- **Automated Vote Counting**: Dynamically updates results in real-time.\n- **Candidate Management**: Admins can add, edit, and delete candidate records.\n- **Voter Authentication**: Secure username-password verification.\n\n## \ud83d\udd27 Tech Stack\n- **Frontend**: Java (Swing, JFrame Forms)\n- **Backend**: Java, SQL Server\n- **Database**: SQL Server with ERD-based schema\n- **Libraries Used**:\n  - `mssql-jdbc-8.2.2.jre8.jar` (JDBC driver for SQL Server)\n  - Java Development Kit (JDK 19)\n\n## \ud83c\udfe2 System Architecture\nThe project is divided into different modules:\n- **Admin Module**: Handles candidate and voter management.\n- **Voter Module**: Allows authenticated users to cast votes.\n- **Database Connection**: Facilitates secure data storage and retrieval.\n- **Voting Mechanism**: Prevents duplicate voting and maintains accurate vote counts.\n\n## \ud83d\udcca Database Schema\nEntities in the database:\n- **Admin**: (`A_ID`, `Phone`, `Email`, `Fullname`, `Username`, `Password`)\n- **Account**: (`ACC_ID`, `Username`, `Password`, `V_ID`)\n- **Voter**: (`V_ID`, `Job`, `Phone`, `Name`, `DOB`, `Gender`, `A_ID`)\n- **Candidate**: (`C_ID`, `First Name`, `Last Name`, `Phone`, `Position`, `A_ID`)\n- **Votes**: (`Votes_ID`, `Date`, `V_ID`, `C_ID`)\n\n## \ud83d\ude80 How to Run the Project\n1. Clone the repository:\n   ```sh\n   git clone https://github.com/your-username/voting-system.git\n   ```\n2. Open the project in **NetBeans IDE**.\n3. Configure database credentials in `ConnectToDb.java`.\n4. Run the SQL scripts to create the database and tables.\n5. Start the application and log in as Admin or Voter.\n\n## \ud83d\udc4d Sample SQL Queries\nFind the top 10 candidates with the highest votes:\n```sql\nSELECT TOP 10 Candidate.First_name, Candidate.Last_name, COUNT(Votes.V_ID) AS VoteCount\nFROM Candidate\nJOIN Votes ON Candidate.C_ID = Votes.C_ID\nGROUP BY Candidate.C_ID, Candidate.First_name, Candidate.Last_name\nORDER BY VoteCount DESC;\n```\n\nFind the most recent voter:\n```sql\nSELECT TOP 1 Voter.* FROM Voter\nJOIN Votes ON Voter.V_ID = Votes.V_ID\nORDER BY Votes.date DESC;\n```\n\n## \ud83c\udf93 Team Members\n- Nguyễn Hoàng Lý\n- Nguyễn Trần Trung Kỳ\n- Văn Bảo Khánh\n- Nguyễn Trần Hoàng Nam\n- Huỳnh Văn Vĩnh\n\n## \ud83d\udcc4 Project Documentation\n- [Source Code](https://drive.google.com/drive/folders/1LDLDizHy9qtnUsxD4TRLR8vxgaIWUgwj?usp=sharing)\n- [Slides](https://www.canva.com/design/DAFh3AlX0Ys/94_U_U1F-XZRpzNA56JZKg/edit?utm_content=DAFh3AlX0Ys&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)\n\n\ud83d\udce2 **Vote Smart, Vote Securely!** \ud83d\uddf3\ufe0f"""
+readme_content = """
+# Voting System
+
+## 📌 Overview
+The **Voting System** is an online platform designed to facilitate secure and reliable digital voting. This project provides a structured database and a user-friendly interface to manage voter registrations, candidate details, and voting processes. 
+
+## 🎯 Key Features
+- **Secure Login System**: Ensures only registered voters can participate.
+- **Admin Dashboard**: Manage voters, candidates, and view election results.
+- **One-Vote Policy**: Prevents multiple votes from a single account.
+- **Automated Vote Counting**: Dynamically updates results in real-time.
+- **Candidate Management**: Admins can add, edit, and delete candidate records.
+- **Voter Authentication**: Secure username-password verification.
+
+## 🔧 Tech Stack
+- **Frontend**: Java (Swing, JFrame Forms)
+- **Backend**: Java, SQL Server
+- **Database**: SQL Server with ERD-based schema
+- **Libraries Used**:
+  - `mssql-jdbc-8.2.2.jre8.jar` (JDBC driver for SQL Server)
+  - Java Development Kit (JDK 19)
+
+## 🏗 System Architecture
+The project is divided into different modules:
+- **Admin Module**: Handles candidate and voter management.
+- **Voter Module**: Allows authenticated users to cast votes.
+- **Database Connection**: Facilitates secure data storage and retrieval.
+- **Voting Mechanism**: Prevents duplicate voting and maintains accurate vote counts.
+
+## 📊 Database Schema
+Entities in the database:
+- **Admin**: (`A_ID`, `Phone`, `Email`, `Fullname`, `Username`, `Password`)
+- **Account**: (`ACC_ID`, `Username`, `Password`, `V_ID`)
+- **Voter**: (`V_ID`, `Job`, `Phone`, `Name`, `DOB`, `Gender`, `A_ID`)
+- **Candidate**: (`C_ID`, `First Name`, `Last Name`, `Phone`, `Position`, `A_ID`)
+- **Votes**: (`Votes_ID`, `Date`, `V_ID`, `C_ID`)
+
+## 🚀 How to Run the Project
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/voting-system.git
+   ```
+2. Open the project in **NetBeans IDE**.
+3. Configure database credentials in `ConnectToDb.java`.
+4. Run the SQL scripts to create the database and tables.
+5. Start the application and log in as Admin or Voter.
+
+## ✅ Sample SQL Queries
+Find the top 10 candidates with the highest votes:
+```sql
+SELECT TOP 10 Candidate.First_name, Candidate.Last_name, COUNT(Votes.V_ID) AS VoteCount
+FROM Candidate
+JOIN Votes ON Candidate.C_ID = Votes.C_ID
+GROUP BY Candidate.C_ID, Candidate.First_name, Candidate.Last_name
+ORDER BY VoteCount DESC;
+```
+
+Find the most recent voter:
+```sql
+SELECT TOP 1 Voter.* FROM Voter
+JOIN Votes ON Voter.V_ID = Votes.V_ID
+ORDER BY Votes.date DESC;
+```
+
+## 📄 Project Documentation
+- [Source Code](https://drive.google.com/drive/folders/1LDLDizHy9qtnUsxD4TRLR8vxgaIWUgwj?usp=sharing)
+- [Slides](https://www.canva.com/design/DAFh3AlX0Ys/94_U_U1F-XZRpzNA56JZKg/edit?utm_content=DAFh3AlX0Ys&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+
+📢 **Vote Smart, Vote Securely!** 🗳️"""
 
 with open("README.md", "w", encoding="utf-8") as file:
     file.write(readme_content)
