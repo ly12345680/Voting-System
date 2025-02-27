@@ -1,7 +1,24 @@
-readme_content = """
+
 # Voting System
-![Demo Image](./demo/Picture1.png)
-*Figure 1: Login page *
+## 🖼️ Demo Images
+### Login Page
+![Login Page](./demo/Picture1.png)
+
+### Admin Dashboard
+![Admin Dashboard](./demo/admin.png)
+
+### Candidate Form
+![Candidate Management](./demo/add_candidates_form.png)
+
+### Voting Page
+![Voting Page](./demo/add_voters_form.png)
+
+### Results Page
+![Results Page](./demo/voting_result.png)
+### ERD Diagram
+![Results Page](./demo/erd.png)
+### Relational Model
+![Results Page](./demo/relationalModel.png)
 ## 📌 Overview
 The **Voting System** is an online platform designed to facilitate secure and reliable digital voting. This project provides a structured database and a user-friendly interface to manage voter registrations, candidate details, and voting processes. 
 
